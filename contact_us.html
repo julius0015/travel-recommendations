@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact Us - Your Travel Website Name</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        nav ul { list-style: none; padding: 0; margin: 0; background-color: #f0f0f0; overflow: hidden; }
+        nav li { float: left; }
+        nav li a { display: block; color: #333; text-align: center; padding: 14px 16px; text-decoration: none; }
+        nav li a:hover { background-color: #ddd; }
+        .contact-us-content { margin-top: 20px; }
+        form div { margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="email"], textarea { width: 300px; padding: 8px; border: 1px solid #ccc; box-sizing: border-box; }
+        button[type="submit"] { background-color: #5cb85c; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+        button[type="submit"]:hover { background-color: #4cae4c; }
+    </style>
 </head>
 <body>
     <nav>
@@ -12,25 +25,25 @@
             <li><a href="./contact_us.html" id="contact">Contact Us</a></li>
         </ul>
     </nav>
-    
+
     <div class="contact-us-content">
-    <h2>Contact Us</h2>
-    <p>Have questions, suggestions, or need assistance? Feel free to reach out to us using the form below.</p>
-    <form id="contactForm">
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-</div>
+        <h2>Contact Us</h2>
+        <p>Have questions, suggestions, or need assistance? Feel free to reach out to us using the form below. We'll do our best to get back to you as soon as possible.</p>
+        <form id="contactForm">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

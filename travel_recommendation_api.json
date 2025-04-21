@@ -1,53 +1,53 @@
 {
   "beaches": [
     {
-      "name": "Sunset Sands Beach",
-      "description": "Relax on the golden sands and enjoy breathtaking sunsets.",
-      "imageUrl": "https://via.placeholder.com/300/FFFF00/000000?Text=Sunset+Sands"
+      "name": "Sunset Serenity Beach, Bali",
+      "description": "Witness breathtaking sunsets over the Indian Ocean on the golden sands of Bali.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Seminyak_Beach%2C_Bali%2C_Indonesia.jpg/1280px-Seminyak_Beach%2C_Bali%2C_Indonesia.jpg"
     },
     {
-      "name": "Azure Cove",
-      "description": "Discover the crystal-clear waters and vibrant marine life.",
-      "imageUrl": "https://via.placeholder.com/300/ADD8E6/000000?Text=Azure+Cove"
+      "name": "Turquoise Waters of Maya Bay, Thailand",
+      "description": "Discover the stunning turquoise waters and limestone cliffs of Maya Bay, made famous by 'The Beach'.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Thailand_Phi_Phi_Leh_Maya_Bay_02.jpg/1280px-Thailand_Phi_Phi_Leh_Maya_Bay_02.jpg"
     },
     {
-      "name": "Palm Paradise Beach",
-      "description": "A tropical paradise with swaying palm trees and gentle waves.",
-      "imageUrl": "https://via.placeholder.com/300/90EE90/000000?Text=Palm+Paradise"
+      "name": "Whitehaven Beach, Australia",
+      "description": "Stroll along the pristine white silica sands of Whitehaven Beach in the Whitsunday Islands.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Whitehaven_Beach_Whitsundays_Australia.jpg/1280px-Whitehaven_Beach_Whitsundays_Australia.jpg"
     }
   ],
   "temples": [
     {
-      "name": "Golden Pagoda",
-      "description": "Visit this ancient temple adorned with gold and intricate carvings.",
-      "imageUrl": "https://via.placeholder.com/300/FFD700/000000?Text=Golden+Pagoda"
+      "name": "Angkor Wat, Cambodia",
+      "description": "Explore the magnificent and historically rich temple complex of Angkor Wat.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Angkor_Wat_Sunrise.JPG/1280px-Angkor_Wat_Sunrise.JPG"
     },
     {
-      "name": "Mountain Sanctuary",
-      "description": "Find peace in this serene temple nestled high in the mountains.",
-      "imageUrl": "https://via.placeholder.com/300/8FBC8F/000000?Text=Mountain+Sanctuary"
+      "name": "Fushimi Inari-taisha Shrine, Japan",
+      "description": "Walk through the thousands of vibrant red torii gates winding up a mountainside.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Fushimi_Inari_in_Kyoto%2C_Japan.jpg/1280px-Fushimi_Inari_in_Kyoto%2C_Japan.jpg"
     },
     {
-      "name": "City Temple Ruins",
-      "description": "Explore the historical ruins of this once grand city temple.",
-      "imageUrl": "https://via.placeholder.com/300/A9A9A9/FFFFFF?Text=City+Temple"
+      "name": "Borobudur Temple, Indonesia",
+      "description": "Witness the awe-inspiring Buddhist temple of Borobudur with its intricate stupas and carvings.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Borobudur_Temple_Top_View_at_Sunrise.jpg/1280px-Borobudur_Temple_Top_View_at_Sunrise.jpg"
     }
   ],
   "countries": [
     {
-      "name": "Mystic Land of Eldoria",
-      "description": "Experience the rich culture and ancient history of Eldoria.",
-      "imageUrl": "https://via.placeholder.com/300/DDA0DD/FFFFFF?Text=Eldoria"
+      "name": "Italy",
+      "description": "Discover the art, history, cuisine, and stunning landscapes of Italy.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg/1280px-Colosseum_in_Rome%2C_Italy_-_April_2007.jpg"
     },
     {
-      "name": "Tranquil Isle of Avalon",
-      "description": "Discover the natural beauty and calm atmosphere of Avalon.",
-      "imageUrl": "https://via.placeholder.com/300/98FB98/000000?Text=Avalon"
+      "name": "Japan",
+      "description": "Experience the unique blend of tradition and modernity in Japan.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Mount_Fuji_from_Lake_Kawaguchiko_on_a_clear_morning.jpg/1280px-Mount_Fuji_from_Lake_Kawaguchiko_on_a_clear_morning.jpg"
     },
     {
-      "name": "Vibrant Nation of Zenith",
-      "description": "Immerse yourself in the modern and exciting culture of Zenith.",
-      "imageUrl": "https://via.placeholder.com/300/FFA07A/FFFFFF?Text=Zenith"
+      "name": "Peru",
+      "description": "Explore the ancient wonders of Machu Picchu and the diverse landscapes of Peru.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu%2C_Peru.jpg/1280px-Machu_Picchu%2C_Peru.jpg"
     }
   ]
 }

@@ -1,1 +1,44 @@
-
+{
+  "beaches": [
+    {
+      "name": "Sunset Sands Beach",
+      "description": "Relax on the golden sands and enjoy breathtaking sunsets.",
+      "imageUrl": "https://via.placeholder.com/300/FFFF00/000000?Text=Sunset+Sands",
+      "imageUrls": ["https://via.placeholder.com/150/FFFF00/000000?Text=Sunset+Sands+1", "https://via.placeholder.com/150/FFD700/000000?Text=Sunset+Sands+2"]
+    },
+    {
+      "name": "Azure Cove",
+      "description": "Discover the crystal-clear waters and vibrant marine life.",
+      "imageUrl": "https://via.placeholder.com/300/ADD8E6/000000?Text=Azure+Cove",
+      "imageUrls": ["https://via.placeholder.com/150/ADD8E6/000000?Text=Azure+Cove+1", "https://via.placeholder.com/150/87CEEB/000000?Text=Azure+Cove+2"]
+    }
+  ],
+  "temples": [
+    {
+      "name": "Golden Pagoda",
+      "description": "Visit this ancient temple adorned with gold.",
+      "imageUrl": "https://via.placeholder.com/300/FFD700/000000?Text=Golden+Pagoda",
+      "imageUrls": ["https://via.placeholder.com/150/FFD700/000000?Text=Golden+Pagoda+1", "https://via.placeholder.com/150/EEE8AA/000000?Text=Golden+Pagoda+2"]
+    },
+    {
+      "name": "Mountain Sanctuary",
+      "description": "Find peace in this serene temple nestled in the mountains.",
+      "imageUrl": "https://via.placeholder.com/300/8FBC8F/000000?Text=Mountain+Sanctuary",
+      "imageUrls": ["https://via.placeholder.com/150/8FBC8F/000000?Text=Mountain+Sanctuary+1", "https://via.placeholder.com/150/3CB371/FFFFFF?Text=Mountain+Sanctuary+2"]
+    }
+  ],
+  "countries": [
+    {
+      "name": "Mystic Land of Eldoria",
+      "description": "Experience the rich culture and history of Eldoria.",
+      "imageUrl": "https://via.placeholder.com/300/DDA0DD/FFFFFF?Text=Eldoria",
+      "imageUrls": ["https://via.placeholder.com/150/DDA0DD/FFFFFF?Text=Eldoria+1", "https://via.placeholder.com/150/BA55D3/FFFFFF?Text=Eldoria+2"]
+    },
+    {
+      "name": "Tranquil Isle of Avalon",
+      "description": "Discover the natural beauty and calm of Avalon.",
+      "imageUrl": "https://via.placeholder.com/300/98FB98/000000?Text=Avalon",
+      "imageUrls": ["https://via.placeholder.com/150/98FB98/000000?Text=Avalon+1", "https://via.placeholder.com/150/32CD32/FFFFFF?Text=Avalon+2"]
+    }
+  ]
+}

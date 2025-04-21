@@ -4,8 +4,26 @@ const searchInput = document.getElementById('searchInput');
 const clearBtn = document.getElementById('clearBtn');
 const resultsContainer = document.getElementById('resultsContainer');
 
-// Mapping of country names to their primary time zones (you might need to expand this)
-const countryTimeZones = {
+// Mapping of location names to their primary time zones (you might need to expand this)
+const locationTimeZones = {
+    "Sunset Serenity Beach, Bali": "Asia/Denpasar",
+    "Turquoise Waters of Maya Bay, Thailand": "Asia/Bangkok",
+    "Whitehaven Beach, Australia": "Australia/Sydney",
+    "Bora Bora, French Polynesia": "Pacific/Tahiti",
+    "Maldives": "Indian/Maldives",
+    "Navagio Beach (Shipwreck Beach), Greece": "Europe/Athens",
+    "Pink Sands Beach, Bahamas": "America/Nassau",
+    "Railay Beach, Thailand": "Asia/Bangkok",
+    "Anse Source d'Argent, Seychelles": "Indian/Mahe",
+    "Cannon Beach, USA": "America/Los_Angeles",
+    "Angkor Wat, Cambodia": "Asia/Phnom_Penh",
+    "Fushimi Inari-taisha Shrine, Japan": "Asia/Tokyo",
+    "Borobudur Temple, Indonesia": "Asia/Jakarta",
+    "Sistine Chapel, Vatican City": "Europe/Vatican",
+    "Sheikh Zayed Mosque, Abu Dhabi, UAE": "Asia/Dubai",
+    "Lotus Temple, India": "Asia/Kolkata",
+    "Wat Arun Ratchawararam Ratchawaramahawihan, Thailand": "Asia/Bangkok",
+    "Meiji Jingu Shrine, Japan": "Asia/Tokyo",
     "Italy": "Europe/Rome",
     "Japan": "Asia/Tokyo",
     "Peru": "America/Lima",
@@ -31,19 +49,22 @@ const countryTimeZones = {
     "Vietnam": "Asia/Ho_Chi_Minh"
 };
 
-function formatTime(timeZone) {
+function formatDateTime(timeZone) {
     try {
         const options = {
             timeZone: timeZone,
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
             hour12: true,
             hour: 'numeric',
             minute: 'numeric',
             second: 'numeric'
         };
-        return new Date().toLocaleTimeString('en-US', options);
+        return new Date().toLocaleDateString('en-US', options) + ' - ' + new Date().toLocaleTimeString('en-US', options);
     } catch (error) {
-        console.error(`Error getting time for ${timeZone}:`, error);
-        return "Time unavailable";
+        console.error(`Error getting date and time for ${timeZone}:`, error);
+        return "Date and time unavailable";
     }
 }
 
@@ -66,7 +87,9 @@ fetch('./travel_recommendation_api.json')
                 if (beachResults.length > 0) {
                     foundResults = true;
                     beachResults.slice(0, 2).forEach(beach => {
-                        resultsContainer.innerHTML += `<div><img src="${beach.imageUrl}" alt="${beach.name}"><p><strong>${beach.name}</strong></p><p>${beach.description}</p></div>`;
+                        const timeZone = locationTimeZones[beach.name];
+                        const currentDateTime = timeZone ? formatDateTime(timeZone) : 'Date and time unavailable';
+                        resultsContainer.innerHTML += `<div><img src="${beach.imageUrl}" alt="${beach.name}"><p><strong>${beach.name}</strong></p><p>${beach.description}</p><p>Current date and time: ${currentDateTime}</p></div>`;
                     });
                 } else if (searchTerm.includes('beach')) {
                     resultsContainer.innerHTML += '<p>No beach recommendations found for your search.</p>';
@@ -81,7 +104,9 @@ fetch('./travel_recommendation_api.json')
                 if (templeResults.length > 0) {
                     foundResults = true;
                     templeResults.slice(0, 2).forEach(temple => {
-                        resultsContainer.innerHTML += `<div><img src="${temple.imageUrl}" alt="${temple.name}"><p><strong>${temple.name}</strong></p><p>${temple.description}</p></div>`;
+                        const timeZone = locationTimeZones[temple.name];
+                        const currentDateTime = timeZone ? formatDateTime(timeZone) : 'Date and time unavailable';
+                        resultsContainer.innerHTML += `<div><img src="${temple.imageUrl}" alt="${temple.name}"><p><strong>${temple.name}</strong></p><p>${temple.description}</p><p>Current date and time: ${currentDateTime}</p></div>`;
                     });
                 } else if (searchTerm.includes('temple')) {
                     resultsContainer.innerHTML += '<p>No temple recommendations found for your search.</p>';
@@ -96,9 +121,9 @@ fetch('./travel_recommendation_api.json')
                 if (countryResults.length > 0) {
                     foundResults = true;
                     countryResults.slice(0, 2).forEach(country => {
-                        const timeZone = countryTimeZones[country.name];
-                        const currentTime = timeZone ? formatTime(timeZone) : 'Time zone not available';
-                        resultsContainer.innerHTML += `<div><img src="${country.imageUrl}" alt="${country.name}"><p><strong>${country.name}</strong></p><p>${country.description}</p><p>Current time: ${currentTime}</p></div>`;
+                        const timeZone = locationTimeZones[country.name];
+                        const currentDateTime = timeZone ? formatDateTime(timeZone) : 'Date and time unavailable';
+                        resultsContainer.innerHTML += `<div><img src="${country.imageUrl}" alt="${country.name}"><p><strong>${country.name}</strong></p><p>${country.description}</p><p>Current date and time: ${currentDateTime}</p></div>`;
                     });
                 } else if (searchTerm.includes('country')) {
                     resultsContainer.innerHTML += '<p>No country recommendations found for your search.</p>';

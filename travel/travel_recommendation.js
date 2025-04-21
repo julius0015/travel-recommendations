@@ -23,13 +23,20 @@ searchBtn.addEventListener('click', () => {
         });
     } else if (searchTerm.includes('country') && data.countries) {
         data.countries.slice(0, 2).forEach(country => {
-            resultsContainer.innerHTML += `<div><img src="${country.imageUrl}" alt="${country.name}"><p><strong>${country.name}</strong></p><p>${country.description}</p></div>`;
+        const options = { timeZone: country.timezone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        const countryTime = new Date().toLocaleTimeString('en-US', options);
+            resultsContainer.innerHTML += `<div><img src="<span class="math-inline">\{country\.imageUrl\}" alt\="</span>{country.name}"><p><strong><span class="math-inline">\{country\.name\}</strong\></p\><p\></span>{country.description}</p><p>Current Time: ${countryTime}</p></div>`;
         });
     } else if (searchTerm) {
         resultsContainer.innerHTML = '<p>No recommendations found for your search.</p>';
     }
     });
 
+    const clearBtn = document.getElementById('clearBtn');
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        resultsContainer.innerHTML = ''; // Clear the displayed recommendations
+    });
 
     .catch(error => {
         console.error("Error fetching data:", error);

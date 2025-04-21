@@ -7,7 +7,7 @@ const resultsContainer = document.getElementById('resultsContainer');
 fetch('./travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
-        console.log("Travel Recommendation Data:", data);
+        console.log("Travel Recommendation Data:", data); // Check if the data is logged correctly
 
         searchBtn.addEventListener('click', () => {
             const searchTerm = searchInput.value.toLowerCase();

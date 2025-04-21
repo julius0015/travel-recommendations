@@ -13,38 +13,13 @@
         nav li input[type="text"] { padding: 8px; margin-left: 20px; border: 1px solid #ccc; }
         nav li button { padding: 8px 12px; background-color: #007bff; color: white; border: none; cursor: pointer; margin-left: 5px; }
         nav li button:hover { background-color: #0056b3; }
-        .home-container, .about-us-container, .contact-us-container {
-            padding: 50px 20px;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-            color: white; /* Adjust text color for better visibility */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add text shadow for readability */
-            min-height: 400px; /* Ensure some minimum height */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .home-container h1, .about-us-container h2, .contact-us-container h2 {
-            margin-bottom: 10px;
-        }
+        .home-container { background-color: #e9ecef; padding: 50px 20px; text-align: center; }
+        .home-container h1 { margin-bottom: 10px; }
         .home-container .book-now-btn { padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; font-size: 16px; }
         .home-container .book-now-btn:hover { background-color: #218838; }
         #resultsContainer { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .result-item { border: 1px solid #ccc; padding: 15px; width: 350px; text-align: center; }
-        .result-item img, .result-item video { max-width: 100%; height: auto; margin-bottom: 10px; }
-        .result-item p strong { font-size: 1.1em; }
-        /* Specific background styles */
-        .home-background {
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Seminyak_Beach%2C_Bali%2C_Indonesia.jpg/1280px-Seminyak_Beach%2C_Bali%2C_Indonesia.jpg');
-        }
-        .about-us-background {
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Angkor_Wat_Sunrise.JPG/1280px-Angkor_Wat_Sunrise.JPG');
-        }
-        .contact-us-background {
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg/1280px-Colosseum_in_Rome%2C_Italy_-_April_2007.jpg');
-        }
+        #resultsContainer div { border: 1px solid #ccc; padding: 15px; width: 300px; text-align: center; }
+        #resultsContainer img { max-width: 100%; height: auto; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -59,10 +34,11 @@
         </ul>
     </nav>
 
-    <div class="home-container home-background">
-        <div class="background-overlay"> <h1>Explore the World and Discover Your Next Adventure</h1>
+    <div class="home-container">
+        <div class="background-image">
+            <h1>Explore the World and Discover Your Next Adventure</h1>
             <p>Embark on a journey of cultural exploration and unforgettable experiences.</p>
-            <button class="book-now-btn" onclick="window.location.href='[YOUR_BOOKING_URL_HERE]'">Book Now</button>
+            <button class="book-now-btn" onclick="showAlert()">Book Now</button>
             <div class="social-links">
                 </div>
         </div>
@@ -73,207 +49,10 @@
     </div>
 
     <script>
-        const searchBtn = document.getElementById('searchBtn');
-        const searchInput = document.getElementById('searchInput');
-        const clearBtn = document.getElementById('clearBtn');
-        const resultsContainer = document.getElementById('resultsContainer');
-        const currentPage = window.location.pathname.split('/').pop();
-
-        // Mapping of location names to their primary time zones (you might need to expand this)
-        const locationTimeZones = {
-            "Sunset Serenity Beach, Bali": "Asia/Denpasar",
-            "Turquoise Waters of Maya Bay, Thailand": "Asia/Bangkok",
-            "Whitehaven Beach, Australia": "Australia/Sydney",
-            "Bora Bora, French Polynesia": "Pacific/Tahiti",
-            "Maldives": "Indian/Maldives",
-            "Navagio Beach (Shipwreck Beach), Greece": "Europe/Athens",
-            "Pink Sands Beach, Bahamas": "America/Nassau",
-            "Railay Beach, Thailand": "Asia/Bangkok",
-            "Anse Source d'Argent, Seychelles": "Indian/Mahe",
-            "Cannon Beach, USA": "America/Los_Angeles",
-            "Angkor Wat, Cambodia": "Asia/Phnom_Penh",
-            "Fushimi Inari-taisha Shrine, Japan": "Asia/Tokyo",
-            "Borobudur Temple, Indonesia": "Asia/Jakarta",
-            "Sistine Chapel, Vatican City": "Europe/Vatican",
-            "Sheikh Zayed Mosque, Abu Dhabi, UAE": "Asia/Dubai",
-            "Lotus Temple, India": "Asia/Kolkata",
-            "Wat Arun Ratchawararam Ratchawaramahawihan, Thailand": "Asia/Bangkok",
-            "Meiji Jingu Shrine, Japan": "Asia/Tokyo",
-            "Italy": "Europe/Rome",
-            "Japan": "Asia/Tokyo",
-            "Peru": "America/Lima",
-            "France": "Europe/Paris",
-            "Canada": "America/Toronto", // Or another major city
-            "Egypt": "Africa/Cairo",
-            "South Africa": "Africa/Johannesburg",
-            "Brazil": "America/Sao_Paulo",
-            "New Zealand": "Pacific/Auckland",
-            "Greece": "Europe/Athens",
-            "China": "Asia/Shanghai",
-            "United Kingdom": "Europe/London",
-            "Mexico": "America/Mexico_City",
-            "Turkey": "Europe/Istanbul",
-            "Ireland": "Europe/Dublin",
-            "Australia": "Australia/Sydney",
-            "India": "Asia/Kolkata",
-            "Iceland": "Atlantic/Reykjavik",
-            "Morocco": "Africa/Casablanca",
-            "Thailand": "Asia/Bangkok",
-            "Costa Rica": "America/Costa_Rica",
-            "Scotland": "Europe/London", // Scotland uses the same time zone as London for the most part
-            "Vietnam": "Asia/Ho_Chi_Minh"
-        };
-
-        function formatDateTime(timeZone) {
-            try {
-                const options = {
-                    timeZone: timeZone,
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour12: true,
-                    hour: 'numeric',
-                    minute: 'numeric',
-                    second: 'numeric'
-                };
-                return new Date().toLocaleDateString('en-US', options) + ' - ' + new Date().toLocaleTimeString('en-US', options);
-            } catch (error) {
-                console.error(`Error getting date and time for ${timeZone}:`, error);
-                return "Date and time unavailable";
-            }
+        function showAlert() {
+            alert('Thank you for your interest! Booking functionality is not yet implemented on this demo.');
         }
-
-        fetch('./travel_recommendation_api.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log("Travel Recommendation Data:", data);
-
-                searchBtn.addEventListener('click', () => {
-                    const searchTerm = searchInput.value.toLowerCase();
-                    resultsContainer.innerHTML = ''; // Clear previous results
-
-                    let foundResults = false;
-
-                    const displayResult = (item, type) => {
-                        const timeZone = locationTimeZones[item.name];
-                        const currentDateTime = timeZone ? formatDateTime(timeZone) : 'Date and time unavailable';
-                        const mediaTag = item.videoUrl ? `<video src="${item.videoUrl}" alt="${item.name}" controls></video>` : `<img src="${item.imageUrl}" alt="${item.name}">`;
-                        resultsContainer.innerHTML += `<div class="result-item">${mediaTag}<p><strong>${item.name}</strong></p><p>${item.description}</p><p>Current date and time: ${currentDateTime}</p></div>`;
-                    };
-
-                    if (data.beaches) {
-                        const beachResults = data.beaches.filter(beach =>
-                            beach.name.toLowerCase().includes(searchTerm) ||
-                            beach.description.toLowerCase().includes(searchTerm)
-                        );
-                        if (beachResults.length > 0) {
-                            foundResults = true;
-                            beachResults.slice(0, 2).forEach(beach => displayResult(beach, 'beach'));
-                        } else if (searchTerm.includes('beach')) {
-                            resultsContainer.innerHTML += '<p>No beach recommendations found for your search.</p>';
-                        }
-                    }
-
-                    if (data.temples) {
-                        const templeResults = data.temples.filter(temple =>
-                            temple.name.toLowerCase().includes(searchTerm) ||
-                            temple.description.toLowerCase().includes(searchTerm)
-                        );
-                        if (templeResults.length > 0) {
-                            foundResults = true;
-                            templeResults.slice(0, 2).forEach(temple => displayResult(temple, 'temple'));
-                        } else if (searchTerm.includes('temple')) {
-                            resultsContainer.innerHTML += '<p>No temple recommendations found for your search.</p>';
-                        }
-                    }
-
-                    if (data.countries) {
-                        const countryResults = data.countries.filter(country =>
-                            country.name.toLowerCase().includes(searchTerm) ||
-                            country.description.toLowerCase().includes(searchTerm)
-                        );
-                        if (countryResults.length > 0) {
-                            foundResults = true;
-                            countryResults.slice(0, 2).forEach(country => displayResult(country, 'country'));
-                        } else if (searchTerm.includes('country')) {
-                            resultsContainer.innerHTML += '<p>No country recommendations found for your search.</p>';
-                        }
-                    }
-
-                    if (!searchTerm) {
-                        resultsContainer.innerHTML = '<p>Enter a keyword to search for recommendations.</p>';
-                    } else if (!foundResults && searchTerm && !searchTerm.includes('beach') && !searchTerm.includes('temple') && !searchTerm.includes('country')) {
-                        resultsContainer.innerHTML = '<p>No recommendations found for your search.</p>';
-                    }
-                });
-
-                clearBtn.addEventListener('click', () => {
-                    searchInput.value = '';
-                    resultsContainer.innerHTML = '<p>Enter a keyword to search for recommendations.</p>';
-                });
-
-                // Initial message when the page loads
-                resultsContainer.innerHTML = '<p>Enter a keyword to search for recommendations.</p>';
-
-            })
-            .catch(error => {
-                console.error("Error fetching data:", error);
-                resultsContainer.innerHTML = '<p>Failed to load recommendations.</p>';
-            });
     </script>
-
-    <div class="about-us-container about-us-background" style="display: none;">
-        <h2>About Our Travel Recommendations</h2>
-        <p>We are passionate about helping you discover amazing travel destinations...</p>
-        </div>
-
-    <div class="contact-us-container contact-us-background" style="display: none;">
-        <h2>Contact Us</h2>
-        <p>Have questions or need assistance? Reach out to us...</p>
-        </div>
-
-    <script>
-        const homeLink = document.getElementById('home');
-        const aboutLink = document.getElementById('about');
-        const contactLink = document.getElementById('contact');
-        const homeContainer = document.querySelector('.home-container');
-        const aboutUsContainer = document.querySelector('.about-us-container');
-        const contactUsContainer = document.querySelector('.contact-us-container');
-        const resultsArea = document.getElementById('resultsContainer');
-
-        function showSection(section) {
-            homeContainer.style.display = 'none';
-            aboutUsContainer.style.display = 'none';
-            contactUsContainer.style.display = 'none';
-            resultsArea.style.display = 'none'; // Hide search results on navigation
-
-            if (section === 'home') {
-                homeContainer.style.display = 'flex';
-                resultsArea.style.display = 'block'; // Show search on home
-            } else if (section === 'about') {
-                aboutUsContainer.style.display = 'flex';
-            } else if (section === 'contact') {
-                contactUsContainer.style.display = 'flex';
-            }
-        }
-
-        homeLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            showSection('home');
-        });
-
-        aboutLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            showSection('about');
-        });
-
-        contactLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            showSection('contact');
-        });
-
-        // Show Home section by default
-        showSection('home');
-    </script>
+    <script src="./travel_recommendation.js"></script>
 </body>
 </html>

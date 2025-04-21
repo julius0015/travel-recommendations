@@ -11,18 +11,25 @@ fetch('./travel_recommendation_api.json')
 
 searchBtn.addEventListener('click', () => {
     const searchTerm = searchInput.value.toLowerCase();
-    resultsContainer.innerHTML = ''; // Clear previous results
+    resultsContainer.innerHTML = '';
 
-    if (searchTerm.includes('beach')) {
-        // Logic to display beach recommendations (Task 8)
-    } else if (searchTerm.includes('temple')) {
-        // Logic to display temple recommendations (Task 8)
-    } else if (searchTerm.includes('country')) {
-        // Logic to display country recommendations (Task 8)
+    if (searchTerm.includes('beach') && data.beaches) {
+        data.beaches.slice(0, 2).forEach(beach => {
+            resultsContainer.innerHTML += `<div><img src="${beach.imageUrl}" alt="${beach.name}"><p><strong>${beach.name}</strong></p><p>${beach.description}</p></div>`;
+        });
+    } else if (searchTerm.includes('temple') && data.temples) {
+        data.temples.slice(0, 2).forEach(temple => {
+            resultsContainer.innerHTML += `<div><img src="${temple.imageUrl}" alt="${temple.name}"><p><strong>${temple.name}</strong></p><p>${temple.description}</p></div>`;
+        });
+    } else if (searchTerm.includes('country') && data.countries) {
+        data.countries.slice(0, 2).forEach(country => {
+            resultsContainer.innerHTML += `<div><img src="${country.imageUrl}" alt="${country.name}"><p><strong>${country.name}</strong></p><p>${country.description}</p></div>`;
+        });
     } else if (searchTerm) {
         resultsContainer.innerHTML = '<p>No recommendations found for your search.</p>';
     }
-});
+    });
+
 
     .catch(error => {
         console.error("Error fetching data:", error);

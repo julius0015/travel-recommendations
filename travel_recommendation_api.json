@@ -14,6 +14,41 @@
       "name": "Whitehaven Beach, Australia",
       "description": "Stroll along the pristine white silica sands of Whitehaven Beach in the Whitsunday Islands.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Whitehaven_Beach_Whitsundays_Australia.jpg/1280px-Whitehaven_Beach_Whitsundays_Australia.jpg"
+    },
+    {
+      "name": "Bora Bora, French Polynesia",
+      "description": "Relax in luxurious overwater bungalows and enjoy the crystal-clear lagoons of Bora Bora.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Bora_Bora%2C_French_Polynesia.jpg/1280px-Bora_Bora%2C_French_Polynesia.jpg"
+    },
+    {
+      "name": "Maldives",
+      "description": "Experience unparalleled luxury and stunning underwater scenery in the idyllic islands of the Maldives.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Maldives_island_beach.jpg/1280px-Maldives_island_beach.jpg"
+    },
+    {
+      "name": "Navagio Beach (Shipwreck Beach), Greece",
+      "description": "Discover the iconic shipwreck on the stunning white sands surrounded by towering cliffs in Zakynthos.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Navagio_Beach_Zakynthos.jpg/1280px-Navagio_Beach_Zakynthos.jpg"
+    },
+    {
+      "name": "Pink Sands Beach, Bahamas",
+      "description": "Walk along the unique pink-hued sands of Harbour Island, a truly unforgettable beach experience.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Pink_Sand_Beach%2C_Harbour_Island%2C_Bahamas.jpg/1280px-Pink_Sand_Beach%2C_Harbour_Island%2C_Bahamas.jpg"
+    },
+    {
+      "name": "Railay Beach, Thailand",
+      "description": "Enjoy rock climbing, stunning limestone cliffs, and beautiful beaches accessible only by boat in Krabi.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Railay_West_Beach_Krabi_Thailand.jpg/1280px-Railay_West_Beach_Krabi_Thailand.jpg"
+    },
+    {
+      "name": "Anse Source d'Argent, Seychelles",
+      "description": "Marvel at the granite boulders and pristine turquoise waters of this iconic beach on La Digue.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Anse_Source_d%27Argent.jpg/1280px-Anse_Source_d%27Argent.jpg"
+    },
+    {
+      "name": "Cannon Beach, USA",
+      "description": "Admire the iconic Haystack Rock and the dramatic Pacific coastline in Oregon.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Haystack_Rock_Cannon_Beach_Oregon.jpg/1280px-Haystack_Rock_Cannon_Beach_Oregon.jpg"
     }
   ],
   "temples": [
@@ -31,6 +66,31 @@
       "name": "Borobudur Temple, Indonesia",
       "description": "Witness the awe-inspiring Buddhist temple of Borobudur with its intricate stupas and carvings.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Borobudur_Temple_Top_View_at_Sunrise.jpg/1280px-Borobudur_Temple_Top_View_at_Sunrise.jpg"
+    },
+    {
+      "name": "Sistine Chapel, Vatican City",
+      "description": "Behold Michelangelo's breathtaking frescoes in one of the most famous chapels in the world.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sistine_Chapel_ceiling_01.jpg/1280px-Sistine_Chapel_ceiling_01.jpg"
+    },
+    {
+      "name": "Sheikh Zayed Mosque, Abu Dhabi, UAE",
+      "description": "Visit this stunning modern mosque with its intricate Islamic architecture and vast courtyards.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Sheikh_Zayed_Mosque_%2850797898201%29.jpg/1280px-Sheikh_Zayed_Mosque_%2850797898201%29.jpg"
+    },
+    {
+      "name": "Lotus Temple, India",
+      "description": "Admire the distinctive lotus flower-like architecture of this Baháʼí House of Worship in Delhi.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Lotus_Temple_New_Delhi_India.jpg/1280px-Lotus_Temple_New_Delhi_India.jpg"
+    },
+    {
+      "name": "Wat Arun Ratchawararam Ratchawaramahawihan, Thailand",
+      "description": "Explore the iconic Temple of Dawn on the Chao Phraya River in Bangkok, known for its intricate spires.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Wat_Arun_Ratchawararam_Ratchawaramahawihan_-_view_from_the_west_bank_of_the_Chao_Phraya_River.jpg/1280px-Wat_Arun_Ratchawararam_Ratchawaramahawihan_-_view_from_the_west_bank_of_the_Chao_Phraya_River.jpg"
+    },
+    {
+      "name": "Meiji Jingu Shrine, Japan",
+      "description": "Find serenity in this peaceful shrine dedicated to Emperor Meiji and Empress Shoken in the heart of Tokyo.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Meiji_Jingu_Main_Hall_2016.jpg/1280px-Meiji_Jingu_Main_Hall_2016.jpg"
     }
   ],
   "countries": [
@@ -48,6 +108,66 @@
       "name": "Peru",
       "description": "Explore the ancient wonders of Machu Picchu and the diverse landscapes of Peru.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu%2C_Peru.jpg/1280px-Machu_Picchu%2C_Peru.jpg"
+    },
+    {
+      "name": "France",
+      "description": "Experience the romance of Paris, the beauty of the French Riviera, and the vineyards of Bordeaux.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Tour_Eiffel_Wikimedia_Commons.jpg/1280px-Tour_Eiffel_Wikimedia_Commons.jpg"
+    },
+    {
+      "name": "Canada",
+      "description": "Explore vast wildernesses, vibrant multicultural cities, and the majestic Rocky Mountains.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Moraine_Lake_17092005.jpg/1280px-Moraine_Lake_17092005.jpg"
+    },
+    {
+      "name": "Egypt",
+      "description": "Discover the ancient wonders of the pyramids, the Sphinx, and the Nile River.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Giza_Pyramids_at_sunset.jpg/1280px-Giza_Pyramids_at_sunset.jpg"
+    },
+    {
+      "name": "South Africa",
+      "description": "Encounter diverse wildlife, stunning coastlines, and rich cultural heritage.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cape_Town_at_night_%28full_view%29.jpg/1280px-Cape_Town_at_night_%28full_view%29.jpg"
+    },
+    {
+      "name": "Brazil",
+      "description": "Immerse yourself in the vibrant culture, music, and beaches of Brazil, including the Amazon rainforest.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Rio_de_Janeiro_-_Cristo_Redentor.jpg/1280px-Rio_de_Janeiro_-_Cristo_Redentor.jpg"
+    },
+    {
+      "name": "New Zealand",
+      "description": "Experience breathtaking landscapes, from fjords and mountains to geothermal wonders and Maori culture.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Milford_Sound_New_Zealand.jpg/1280px-Milford_Sound_New_Zealand.jpg"
+    },
+    {
+      "name": "Greece",
+      "description": "Explore ancient ruins, picturesque islands, and the birthplace of democracy.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Parthenon_from_southwest.jpg/1280px-Parthenon_from_southwest.jpg"
+    },
+    {
+      "name": "China",
+      "description": "Discover ancient civilizations, iconic landmarks like the Great Wall, and bustling modern cities.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Great_Wall_of_China_at_Jinshanling-edit.jpg/1280px-Great_Wall_of_China_at_Jinshanling-edit.jpg"
+    },
+    {
+      "name": "United Kingdom",
+      "description": "Explore historic castles, vibrant cities like London, and the scenic landscapes of England, Scotland, Wales, and Northern Ireland.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Westminster_Palace_%28aerial_view%29%2C_London_-_Feb_2007.jpg/1280px-Westminster_Palace_%28aerial_view%29%2C_London_-_Feb_2007.jpg"
+    },
+    {
+      "name": "Mexico",
+      "description": "Immerse yourself in rich culture, ancient Mayan ruins, vibrant cuisine, and beautiful beaches.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Chichen_Itza_ Kukulkan_Pyramid.jpg/1280px-Chichen_Itza_-_Kukulkan_Pyramid.jpg"
+    },
+    {
+      "name": "Turkey",
+      "description": "Explore the crossroads of Europe and Asia with ancient ruins, vibrant bazaars, and stunning landscapes like Cappadocia.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cappadocia%2C_Turkey_%28Unsplash%29.jpg/1280px-Cappadocia%2C_Turkey_%28Unsplash%29.jpg"
+    },
+    {
+      "name": "Ireland",
+      "description": "Experience rolling green hills, dramatic coastlines, and a rich history and culture.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cliffs_of_Moher_-_Co._Clare_-_Ireland.jpg/1280px-Cliffs_of_Moher_-_Co._Clare_-_Ireland.jpg"
     }
   ]
 }

@@ -4,10 +4,53 @@ const searchInput = document.getElementById('searchInput');
 const clearBtn = document.getElementById('clearBtn');
 const resultsContainer = document.getElementById('resultsContainer');
 
+// Mapping of country names to their primary time zones (you might need to expand this)
+const countryTimeZones = {
+    "Italy": "Europe/Rome",
+    "Japan": "Asia/Tokyo",
+    "Peru": "America/Lima",
+    "France": "Europe/Paris",
+    "Canada": "America/Toronto", // Or another major city
+    "Egypt": "Africa/Cairo",
+    "South Africa": "Africa/Johannesburg",
+    "Brazil": "America/Sao_Paulo",
+    "New Zealand": "Pacific/Auckland",
+    "Greece": "Europe/Athens",
+    "China": "Asia/Shanghai",
+    "United Kingdom": "Europe/London",
+    "Mexico": "America/Mexico_City",
+    "Turkey": "Europe/Istanbul",
+    "Ireland": "Europe/Dublin",
+    "Australia": "Australia/Sydney",
+    "India": "Asia/Kolkata",
+    "Iceland": "Atlantic/Reykjavik",
+    "Morocco": "Africa/Casablanca",
+    "Thailand": "Asia/Bangkok",
+    "Costa Rica": "America/Costa_Rica",
+    "Scotland": "Europe/London", // Scotland uses the same time zone as London for the most part
+    "Vietnam": "Asia/Ho_Chi_Minh"
+};
+
+function formatTime(timeZone) {
+    try {
+        const options = {
+            timeZone: timeZone,
+            hour12: true,
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        };
+        return new Date().toLocaleTimeString('en-US', options);
+    } catch (error) {
+        console.error(`Error getting time for ${timeZone}:`, error);
+        return "Time unavailable";
+    }
+}
+
 fetch('./travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
-        console.log("Travel Recommendation Data:", data); // Check if the data is logged correctly
+        console.log("Travel Recommendation Data:", data);
 
         searchBtn.addEventListener('click', () => {
             const searchTerm = searchInput.value.toLowerCase();
@@ -53,7 +96,9 @@ fetch('./travel_recommendation_api.json')
                 if (countryResults.length > 0) {
                     foundResults = true;
                     countryResults.slice(0, 2).forEach(country => {
-                        resultsContainer.innerHTML += `<div><img src="${country.imageUrl}" alt="${country.name}"><p><strong>${country.name}</strong></p><p>${country.description}</p></div>`;
+                        const timeZone = countryTimeZones[country.name];
+                        const currentTime = timeZone ? formatTime(timeZone) : 'Time zone not available';
+                        resultsContainer.innerHTML += `<div><img src="${country.imageUrl}" alt="${country.name}"><p><strong>${country.name}</strong></p><p>${country.description}</p><p>Current time: ${currentTime}</p></div>`;
                     });
                 } else if (searchTerm.includes('country')) {
                     resultsContainer.innerHTML += '<p>No country recommendations found for your search.</p>';
